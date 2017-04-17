@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Header from './Header'
+import Header from '../containers/Header'
 
 export default class App extends Component {
   render() {

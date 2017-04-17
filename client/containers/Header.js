@@ -18,15 +18,16 @@ class Header extends Component {
 				</Button>
 			)
 		}
-			return (
-				<Button
-					bsSize="xs"
-					bsStyle="success"
-					onClick={() => this.props.authenticate(true)}
-				>
-					Login
+
+		return (
+			<Button
+				bsSize="xs"
+				bsStyle="success"
+				onClick={() => this.props.authenticate(true)}
+			>
+				Login
 				</Button>
-			)
+		)
 	}
 
 	render() {
