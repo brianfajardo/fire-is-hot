@@ -7,25 +7,21 @@ import * as actions from '../actions'
 
 class Header extends Component {
 	authButton() {
-		if (this.props.authenticated) {
-			return (
-				<Button
+		return (
+			this.props.authenticated
+				? <Button
 					bsSize="xs"
 					bsStyle="danger"
 					onClick={() => this.props.authenticate(false)}
 				>
 					Logout
 				</Button>
-			)
-		}
-
-		return (
-			<Button
-				bsSize="xs"
-				bsStyle="success"
-				onClick={() => this.props.authenticate(true)}
-			>
-				Login
+				: <Button
+					bsSize="xs"
+					bsStyle="success"
+					onClick={() => this.props.authenticate(true)}
+				>
+					Login
 				</Button>
 		)
 	}
