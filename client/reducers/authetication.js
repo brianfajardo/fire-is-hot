@@ -1,4 +1,4 @@
-import { CHANGE_AUTH } from '../actions/types'
+import { CHANGE_AUTH } from '../constants/actionTypes'
 
 const INITIAL_STATE = false
 

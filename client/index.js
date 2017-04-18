@@ -9,15 +9,14 @@ import App from './components/App'
 import Resources from './components/Resources'
 import reducers from './reducers'
 
-const createStoreWidthMiddleware = applyMiddleware()(createStore)
+const createStoreWithMiddleware = applyMiddleware()(createStore)
 
 ReactDOM.render(
-	<Provider store={createStoreWidthMiddleware(reducers)}>
+	<Provider store={createStoreWithMiddleware(reducers)}>
 		<BrowserRouter>
 			<App>
 				<Route path="/resources" component={requireAuth(Resources)} />
 			</App>
 		</BrowserRouter>
 	</Provider>
-	, document.getElementById('root')
-)
+	, document.getElementById('root'))
