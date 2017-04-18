@@ -6,47 +6,47 @@ import { Navbar, Nav, NavItem, Button } from 'react-bootstrap'
 import * as actions from '../actions'
 
 class Header extends Component {
-	authButton() {
-		return (
-			this.props.authenticated
-				? <Button
-					bsSize="xs"
-					bsStyle="danger"
-					onClick={() => this.props.authenticate(false)}
-				>
-					Logout
-				</Button>
-				: <Button
-					bsSize="xs"
-					bsStyle="success"
-					onClick={() => this.props.authenticate(true)}
-				>
-					Login
-				</Button>
-		)
-	}
+  authButton() {
+    return (
+      this.props.authenticated
+        ? <Button
+          bsSize="xs"
+          bsStyle="danger"
+          onClick={() => this.props.authenticate(false)}
+        >
+          Logout
+        </Button>
+        : <Button
+          bsSize="xs"
+          bsStyle="success"
+          onClick={() => this.props.authenticate(true)}
+        >
+          Login
+        </Button>
+    )
+  }
 
-	render() {
-		return (
-			<Navbar>
-				<Nav bsStyle="tabs">
-					<NavItem>
-						<Link to="/">Home</Link>
-					</NavItem>
-					<NavItem>
-						<Link to="/resources">Resources</Link>
-					</NavItem>
-					<NavItem>
-						{this.authButton()}
-					</NavItem>
-				</Nav>
-			</Navbar>
-		)
-	}
+  render() {
+    return (
+      <Navbar>
+        <Nav bsStyle="tabs">
+          <NavItem>
+            <Link to="/">Home</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/resources">Resources</Link>
+          </NavItem>
+          <NavItem>
+            {this.authButton()}
+          </NavItem>
+        </Nav>
+      </Navbar>
+    )
+  }
 }
 
 const mapStateToProps = state => ({
-	authenticated: state.authenticated
+  authenticated: state.authenticated
 })
 
 export default connect(mapStateToProps, actions)(Header)
